@@ -8,10 +8,12 @@ import AppBootstrap from "./components/AppBootstrap.jsx";
 import { store } from "./store/index.js";
 import "./index.css";
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || undefined;
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <AppBootstrap>
           <App />
         </AppBootstrap>

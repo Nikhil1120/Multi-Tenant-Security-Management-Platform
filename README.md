@@ -76,6 +76,17 @@ npm run dev
 
 App: `http://localhost:5173`
 
+## GitHub Pages (frontend)
+
+1. Push this repo to GitHub on branch **`main`**.
+2. Repo **Settings → Pages → Build and deployment → Source:** **GitHub Actions**.
+3. Push to `main` (or run **Actions → Deploy frontend to GitHub Pages → Run workflow**).
+4. Live URL: `https://YOUR_GITHUB_USERNAME.github.io/REPO_NAME/`  
+   (If your repo is `multi-tenant-security-management-platform`, use that as `REPO_NAME`.)
+5. On **Render**, set `CORS_ORIGINS` to include `https://YOUR_GITHUB_USERNAME.github.io` (and `http://localhost:5173` for local dev).
+
+The workflow `.github/workflows/deploy-pages.yml` builds `frontend/` with the Render API URL and deploys `dist/` to Pages.
+
 ## Seed credentials
 
 | Tenant | Email | Password | Role |
