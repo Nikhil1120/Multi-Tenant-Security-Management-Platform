@@ -56,6 +56,15 @@ uvicorn app.main:app --reload --port 8000
 
 API docs: `http://localhost:8000/docs`
 
+**Render deploy:**
+1. **Root Directory:** `backend`
+2. **Environment variable (required):** `PYTHON_VERSION` = `3.12.8` — without this, Render uses **3.14** and `pydantic-core` build fails.
+3. **Build Command:** `bash build.sh` (or `pip install -r requirements.txt` after step 2)
+4. **Start Command:** `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+5. **Other env:** `DATABASE_URL` (Neon), `SECRET_KEY`, `CORS_ORIGINS`, `SEED_DATABASE`
+
+Optional: deploy from repo root `render.yaml` (Blueprint) — it sets `PYTHON_VERSION` automatically.
+
 ### 3) Frontend
 
 ```bash
