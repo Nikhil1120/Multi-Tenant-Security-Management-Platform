@@ -7,7 +7,9 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./deep_trace.db"
     secret_key: str = "dev-secret-change-in-production"
     access_token_expire_minutes: int = 60
-    cors_origins: str = "http://localhost:5173"
+    cors_origins: str = (
+        "http://localhost:5173,https://nikhil1120.github.io"
+    )
     seed_database: bool = True
 
     @property

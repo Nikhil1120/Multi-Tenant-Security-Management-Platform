@@ -15,6 +15,7 @@ services:
         value: "60"
       - key: SEED_DATABASE
         value: "true"
+      - key: CORS_ORIGINS
+        value: "http://localhost:5173,https://nikhil1120.github.io"
       # Set manually in Render dashboard (Neon connection string):
       # - key: DATABASE_URL
-      # - key: CORS_ORIGINS
